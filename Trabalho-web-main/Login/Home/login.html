@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="loginstyle.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="main-login">
+        <div class="right-login">
+            <div class="card-login" id="cardLogin">
+                <h1>ACESSAR</h1>
+                <div class="textfield">
+                    <label for="usuario">Usuário :</label>
+                    <input type="text" name="usuario" placeholder="Usuário">
+                </div>
+                <div class="textfield">
+                    <label for="senha">Senha :</label>
+                    <input type="password" name="senha" placeholder="Senha" id="senhaInput">
+                </div>
+                <form>
+                    <button type="button" class="btn-login" onclick="validarSenha()">Entrar</button>
+                    <button type="submit" class="btn-login"><a href="Cadastrar.html">Cadastrar-se</a></button>
+                </form>
+            </div>
+            <div class="overlay" id="overlay"></div>
+        </div>
+    </div>
+    </main>
+
+    <script>
+        //Alterado, funcao, while e css com javascript
+        async function validarSenha() {
+            var senhaInput = document.getElementById('senhaInput');
+            var senha = senhaInput.value.trim();
+
+            // Exemplo de uso de um loop while para validar a senha
+            while (senha === '') {
+                alert('Por favor, digite a senha!');
+                return; // Se a senha estiver vazia, interrompe a execução e retorna
+            }
+            // Se a senha não estiver vazia, continua com o restante do código
+            alert('Senha válida! Seja bem-vindo!');
+            
+            // Mudar a cor do fundo ao clicar no botão "Entrar"
+            mudarCorFundo();
+
+            // Aguardar 2 segundos (2000 milissegundos) antes de redirecionar para a página Home.html
+            await esperar(3000);
+
+            // Redirecionar para a página Home.html
+            window.location.href = './Home.html';
+        }
+
+        function mudarCorFundo() {
+            var cardLogin = document.getElementById('cardLogin');
+            var overlay = document.getElementById('overlay');
+
+            //  para tornar o overlay visível
+            overlay.classList.add('overlay-ativo');
+            // Muda a cor de fundo do card-login para azul turquesa
+            cardLogin.style.backgroundColor = 'Turquoise';
+        }
+
+        function esperar(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visualização</title>
+  <link rel="stylesheet" href="stylevisualizacao.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+</head>
+<body>
+  <header>
+    <div class=".color-change-3x">
+    <div class="bg-pan-top">
+    <div class="menuTopo">
+        <div class="logo">
+            <img src="./FunkGeeklogo.png" title="logo" alt="Logo" height="120" width="280">
+        </div>
+    </div>
+    </div>
+    </div>
+    <ul>
+        <div class="pesquisa">
+            <form>
+                <label for="Search"></label>
+                <input type="text" name="Search" id="Search" placeholder="Encontre tudo aqui!">            
+            </form>
+            <a href="./Carrinho/Carrinho.html"><img src="./carrinho.png" title="logo" alt="Logo" height="50" width="60"></a>
+
+            <div class="login-icon">
+                <img src="./login-icon.png" alt="Ícone de Login">
+                <div class="login-popup">
+                    <p class="login-message">Entre ou faça seu cadastro em nosso site!</p>
+                    <a href="./login.html" class="login-button">Entrar</a>
+                    <a href="./Cadastrar.html" class="register-button">Cadastrar</a>
+                </div>
+            </div>
+        </div>
+    </ul>
+    <div class="barraNavegacao">
+        <nav>
+            <ul>
+                <li><a href="../Home/Home.html">INICIO</a></li>
+                <li class="dropdown">
+                    <a href="#">MAIS VENDIDOS</a>
+                    <div class="dropdown-content">
+                        <a href="#">Disney</a>
+                        <a href="#">Marvel</a>
+                        <a href="#">One Piece</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#">CATEGORIAS</a>
+                    <div class="dropdown-content">
+                        <a href="#">
+                            <img src="./kakashi-icon.png" alt="Categoria 1">
+                            ANIMES
+                        </a>
+                        
+                        <a href="#">
+                            <img src="./docinho-icon.png" alt="Categoria 2">
+                            CARTOON NETWORK
+                        </a>
+                        <a href="#">
+                            <img src="./seiya-icon.png" alt="Categoria 3">
+                            CAVALEIROS DO ZODIACO
+                        </a>
+                        <a href="#">
+                            <img src="./batman-icon.png" alt="Categoria 4">
+                            DC COMICS
+                        </a>
+                        <a href="#">
+                            <img src="./elsa-icon.png" alt="Categoria 5">
+                            DISNEY
+                        </a>
+                        <a href="#">
+                            <img src="./vegeta-icon.png" alt="Categoria 6">
+                            DRAGON BALL
+                        </a>
+                        <a href="#">
+                            <img src="./round-icon.png" alt="Categoria 7">
+                            FILMES E SERIADOS
+                        </a>
+                        <a href="#">
+                            <img src="./iron-icon.png" alt="Categoria 8">
+                            MARVEL
+                        </a>
+
+                    </div>
+
+                <li><a href="#">TROCAS E DEVOLUÇÕES</a></li>
+                <li><a href="Perguntas/perguntas.html">PERGUNTAS FREQUENTES</a></li>
+            </ul>
+        </nav>
+    </div>
+
+</header>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+    $('.destaque-carousel').slick({
+        dots: true,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear',
+        slidesToShow: 1,
+        slidesToScroll: 1
+    });
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var loginIcon = document.querySelector('.login-icon');
+    var loginPopup = document.createElement('div');
+    loginPopup.className = 'login-popup';
+    loginPopup.innerHTML = '<p class="login-message">Entre ou faça seu cadastro em nosso site!</p>' +
+                           '<button class="login-button" onclick="window.location.href=\'login.html\';">Entrar</button>' +
+                           '<button class="register-button" onclick="window.location.href=\'Cadastrar.html\';">Cadastrar</button>';
+    
+    loginIcon.appendChild(loginPopup);
+    
+    loginIcon.addEventListener('mouseover', function() {
+        loginPopup.style.display = 'block';
+    });
+    
+    loginIcon.addEventListener('mouseout', function() {
+        loginPopup.style.display = 'none';
+    });
+});
+
+//Item marvel
+document.addEventListener("DOMContentLoaded", function() {
+var funkoPopList = document.querySelector('.funko-pop-list');
+
+// Array de objetos representando os bonecos Funko Pop da Marvel
+var funkoPopDataMarvel = [
+    { name: 'Homem-Aranha', image: 'Icon-Marvel/peter.png' },
+    { name: 'Homem de Ferro', image: 'Icon-Marvel/ironman.png' },
+    { name: 'Falcão', image: 'Icon-Marvel/falcon.png' },
+    { name: 'Thor', image: 'Icon-Marvel/thor.png' },
+    { name: 'Pantera Negra', image: 'Icon-Marvel/blackpanter.png' },
+];
+});
+
+</script>
+
+  <main class="conteudo-principal">
+   
+    <section> 
+      <div>
+        <img src="./homem-aranha.png" alt="homem-aranha" width="500" height="500">
+      </div>
+    </section>
+    
+    <aside class="informacoes-produto">
+    
+        <div class="headerProduto"><p>Informações do produto</p></div>
+        <div class="corLado">
+          <div class="ladoConteudo">
+            <div><span>Marca:</span> Funko</div>
+            <div><span>Estoque:</span> 4 unidades</div>
+            <div><span>Referência:</span> 19831298712</div>
+          </div>
+          <section>
+            <div class="ladoMeio">
+              <div class="precoMaior"><span>R$124,99</span></div>
+              <div class="precoMenor">R$117,30 à vista sem juros ou 12x de R$12,50 sem juros</div>
+            </div>
+            <div class="quantidade"><input type="text" placeholder="Quantidade de itens" style="text-align: center; border-radius: 5px;" ></div>
+        </div>
+        </section>
+        <div class="comprar"><a href="./Carrinho/Carrinho.html"><input type="button" value="Comprar agora"></a></div>
+      </aside>
+  </main>
+  <footer class="main_footer container">
+    
+    <div class="content">
+        <div class="colfooter">
+            
+            <h3 class="titleFooter"> Menu</h3>
+            
+            <ul>
+            
+              <li><a href="../Home/Home.html" title="Inicio">Inicio</a></li>
+              <li><a href="#" title="Mais Vendidos">Mais Vendidos</a></li>
+              <li><a href="#" title="Categorias">Categorias</a></li>
+              <li><a href="#" title="Trocas e Devoluções">Trocas e Devoluções</a></li>
+              <li><a href="#" title="Perguntas Frequentes">Perguntas Frequentes</a></li>
+            </ul>
+        </div><!--Col Footer 1-->        
+        <div class="colfooter">
+           
+           <h3 class="titleFooter"> Contato</h3>
+           <p><i class="icon icon-mail"></i> FungeekStore@.com.br</p>
+
+        </div><!--Col Footer 2-->
+        <div class="colfooter">
+           
+           <h3 class="titleFooter"> Redes Sociais</h3>
+            
+           <a href="#" class="botao"><span> <i class="icon icon-facebook"></i> </span></a>            
+           <a href="#" class="botao"><span> <i class="icon icon-instagram"></i> </span></a>            
+           <a href="#" class="botao"><span> <i class="icon icon-twitter"></i> </span></a>            
+           <a href="#" class="botao"><span> <i class="icon icon-pinterest"></i> </span></a>            
+        </div><!--Col Footer 3-->
+        <div class="clear"></div>
+    
+    </div><!--Contant-->
+    <div class="main_footer_copy">
+        
+        <p class="m-b-footer"> Fungeek Store - 2023, todos os direitos reservados.</p> 
+        <p class="by"><i class="icon icon-heart-3"></i> Desenvolvido por: <a href="#" title="Seu nome">Leandro , Thayris , Joao Felipe</a></p>
+    
+    </div>
+</footer>
+</body>
+</html>
