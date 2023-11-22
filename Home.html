@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=".\style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Creepster&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Changa+One&display=swap">
+
+
+    <title>Menu</title>
+</head>
+<body>
+    <header>
+        <div class="bg-pan-top">
+        <div class="menuTopo">
+            <div class="logo">
+                <img src="./FunkGeeklogo.png" title="logo" alt="Logo" height="120" width="280">
+            </div>
+        </div>
+        </div>
+        <ul>
+            <div class="pesquisa">
+                <form>
+                    <label for="Search"></label>
+                    <input type="text" name="Search" id="Search" placeholder="Encontre tudo aqui!">            
+                </form>
+                <a href="Carrinho/Carrinho.html"><img src="carrinho.png" title="logo" alt="Logo" height="50" width="60"></a>
+
+                <div class="login-icon">
+                    <img src="login-icon.png" alt="Ícone de Login">
+                    <div class="login-popup">
+                        <p class="login-message">Entre ou faça seu cadastro em nosso site!</p>
+                        <a href="login.html" class="login-button">Entrar</a>
+                        <a href="Cadastrar.html" class="register-button">Cadastrar</a>
+                    </div>
+                </div>
+            </div>
+        </ul>
+        <div class="barraNavegacao">
+            <nav>
+                <ul>
+                    <li><a href="Home.html">INICIO</a></li>
+                    <li class="dropdown">
+                        <a href="#">MAIS VENDIDOS</a>
+                        <div class="dropdown-content">
+                            <a href="#">Disney</a>
+                            <a href="#">Marvel</a>
+                            <a href="#">One Piece</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">CATEGORIAS</a>
+                        <div class="dropdown-content">
+                            <a href="#">
+                                <img src="./kakashi-icon.png" alt="Categoria 1">
+                                ANIMES
+                            </a>
+                            
+                            <a href="#">
+                                <img src="./docinho-icon.png" alt="Categoria 2">
+                                CARTOON NETWORK
+                            </a>
+                            <a href="#">
+                                <img src="./seiya-icon.png" alt="Categoria 3">
+                                CAVALEIROS DO ZODIACO
+                            </a>
+                            <a href="#">
+                                <img src="./batman-icon.png" alt="Categoria 4">
+                                DC COMICS
+                            </a>
+                            <a href="#">
+                                <img src="./elsa-icon.png" alt="Categoria 5">
+                                DISNEY
+                            </a>
+                            <a href="#">
+                                <img src="./vegeta-icon.png" alt="Categoria 6">
+                                DRAGON BALL
+                            </a>
+                            <a href="#">
+                                <img src="./round-icon.png" alt="Categoria 7">
+                                FILMES E SERIADOS
+                            </a>
+                            <a href="#">
+                                <img src="./iron-icon.png" alt="Categoria 8">
+                                MARVEL
+                            </a>
+
+                        </div>
+
+                    <li><a href="#">TROCAS E DEVOLUÇÕES</a></li>
+                    <li><a href="#">PERGUNTAS FREQUENTES</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="slider-container">
+            <div class="slider">
+                <div><img src="woody.png" alt="Imagem 1"></div>
+                <div><img src="sasuke.png" alt="Imagem 2"></div>
+                <div><img src="Goku.png" alt="Imagem 3"></div>
+            </div>
+            </div>
+        </header>
+        <main>
+            
+            <div class="destaques">
+                <b><h1>Destaques de Halloween!</h1></b>
+                <div class="destaque-carousel">
+                    <div class="slide">
+                        <img src="./myers.png" alt="Destaque 1">
+                    </div>
+                    <div class="slide">
+                        <img src="./mickey.png" alt="Destaque 2">
+                    </div>
+                    <div class="slide">
+                        <img src="./wanda.png" alt="Destaque 3">
+                    </div>
+                    <div class="slide">
+                        <img src="./stitch-halloween.png" alt="Destaque 4">
+                    </div>
+                    <div class="slide">
+                        <img src="./sally.png" alt="Destaque 4">
+                    </div>
+                </div> 
+            </div> <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script src="script.js">
+            const slider = document.querySelector('.slider');
+            const leftArrow = document.querySelector('.left-arrow');
+            const rightArrow = document.querySelector('.right-arrow');
+            
+            let currentIndex = 0;
+            
+            leftArrow.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                } else {
+                    currentIndex = slider.children.length - 1;
+                }
+                updateSlider();
+            });
+            
+            rightArrow.addEventListener('click', () => {
+                if (currentIndex < slider.children.length - 1) {
+                    currentIndex++;
+                } else {
+                    currentIndex = 0;
+                }
+                updateSlider();
+            });
+            
+            function updateSlider() {
+                const translateValue = -currentIndex * 100; // 
+                slider.style.transform = `translateX(${translateValue}%)`;
+            }</script>
+        
+        <script>
+            $(document).ready(function(){
+                $('.slider').slick({
+                    dots: true, 
+                    infinite: true, 
+                    speed: 500, 
+                    slidesToShow: 1, 
+                    slidesToScroll: 1, 
+                    autoplay: true, 
+                    autoplaySpeed: 2000 
+                    
+                });
+            });
+        </script>
+    </header>
+    <main>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $('.destaque-carousel').slick({
+            dots: true,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear',
+            slidesToShow: 1,
+            slidesToScroll: 1
+        });
+    </script>
+   <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var loginIcon = document.querySelector('.login-icon');
+        var loginPopup = document.createElement('div');
+        loginPopup.className = 'login-popup';
+        loginPopup.innerHTML = '<p class="login-message">Entre ou faça seu cadastro em nosso site!</p>' +
+                               '<button class="login-button" onclick="window.location.href=\'login.html\';">Entrar</button>' +
+                               '<button class="register-button" onclick="window.location.href=\'Cadastrar.html\';">Cadastrar</button>';
+        
+        loginIcon.appendChild(loginPopup);
+        
+        loginIcon.addEventListener('mouseover', function() {
+            loginPopup.style.display = 'block';
+        });
+        
+        loginIcon.addEventListener('mouseout', function() {
+            loginPopup.style.display = 'none';
+        });
+    });
+
+
+    document.addEventListener("DOMContentLoaded", function() {
+    var funkoPopList = document.querySelector('.funko-pop-list');
+
+
+    var funkoPopDataMarvel = [
+        { name: 'Homem-Aranha', image: 'Icon-Marvel/peter.png' },
+        { name: 'Homem de Ferro', image: 'Icon-Marvel/ironman.png' },
+        { name: 'Falcão', image: 'Icon-Marvel/falcon.png' },
+        { name: 'Thor', image: 'Icon-Marvel/thor.png' },
+        { name: 'Pantera Negra', image: 'Icon-Marvel/blackpanter.png' },
+    ];
+    });
+
+    </script>
+
+
+
+
+
+    
+    <div class="parte2">
+        <img src="geek.png" width="600px" class="geek">
+        <img src="funko1back.png" width="700px">
+        <img src="funko2back.png">
+    </div>
+    <div class="parte3">
+        <div><img src="espantalho.png" width="390px"></div>
+        <div><img src="eleven.png" width="260px"></div>
+        <div><img src="loirinho.png" width="300px"></div>
+        <div>
+            <h2>Adquira Agora e Envolva-se no Mundo Funko!</h2>
+            <h4>Explore nossa incrível coleção de Funko Pop e mergulhe na vastidão dos seus universos favoritos. 
+                Não perca a chance de possuir esses tesouros colecionáveis - compre agora e comece sua jornada para construir uma coleção digna de 
+                admiração! Transforme sua paixão em algo tangível e celebre suas franquias amadas com os Funko Pops que você sempre desejou.</h4>
+        </div>
+    </div>
+
+
+
+
+    <section class="funko-pop-section">
+        <div class="container">
+            <h2>Personagens da Marvel</h2>
+            <div class="funko-pop-list">
+                <div class="funko-pop-item">
+                    <img src="Icon-Marvel/peter.png" alt="Homem-Aranha">
+                    <h3>MARVEL - Homem-Aranha</h3>
+                    <p>Preço: R$ 120,00</p>
+                    <a href="./tela_visualização.html" class="add-to-cart-button">Adicionar ao Carrinho</a>
+                </div>
+
+                <div class="funko-pop-item">
+                    <img src="Icon-Marvel/ironman.png" alt="Homem-Aranha">
+                    <h3>MARVEL - Homem de Ferro</h3>
+                    <p>Preço: R$ 160,00</p>
+                    <a href="./tela_visualização.html" class="add-to-cart-button">Adicionar ao Carrinho</a>
+                </div>
+
+                <div class="funko-pop-item">
+                    <img src="Icon-Marvel/thor.png" alt="Homem-Aranha">
+                    <h3>MARVEL - Thor com Stormbreaker</h3>
+                    <p>Preço: R$ 89,90</p>
+                    <a href="./tela_visualização.html" class="add-to-cart-button">Adicionar ao Carrinho</a>
+                </div>
+
+                <div class="funko-pop-item">
+                    <img src="Icon-Marvel/blackpanter.png" alt="Homem-Aranha">
+                    <h3>MARVEL - Pantera Negra</h3>
+                    <p>Preço: R$ 200,00</p>
+                    <a href="./tela_visualização.html" class="add-to-cart-button">Adicionar ao Carrinho</a>
+                </div>
+
+                <div class="funko-pop-item">
+                    <img src="Icon-Marvel/falcon.png" alt="Homem-Aranha">
+                    <h3>MARVEL - Falcon</h3>
+                    <p>Preço: R$ 59,90</p>
+                    <a href="./tela_visualização.html" class="add-to-cart-button">Adicionar ao Carrinho</a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+
+
+    <script>
+        //Alterado funcao e
+        const carrinho = [];
+        const buttons = document.querySelectorAll('.add-to-cart-button');
+        buttons.forEach(button => {
+        button.addEventListener('click', function() {
+        const itemContainer = this.parentNode;
+        const title = itemContainer.querySelector('h3').textContent;
+        const priceString = itemContainer.querySelector('p').textContent;
+        const price = parseFloat;
+        const newItem = {
+            title: title,
+            price: price
+        };
+        carrinho.push(newItem);
+        alert('Item adicionado ao carrinho!');
+        console.log(carrinho);
+        });
+    });
+    </script>
+
+
+
+
+    
+    <footer class="main_footer container">
+    
+        <div class="content">
+            <div class="colfooter">
+                <h3 class="titleFooter"> Menu</h3>
+
+                <div class="footer-message"></div>
+
+                <ul>
+                  <li><a href="#" title="Inicio">Inicio</a></li>
+                  <li><a href="#" title="Mais Vendidos">Mais Vendidos</a></li>
+                  <li><a href="#" title="Categorias">Categorias</a></li>
+                  <li><a href="#" title="Trocas e Devoluções">Trocas e Devoluções</a></li>
+                  <li><a href="#" title="Perguntas Frequentes">Perguntas Frequentes</a></li>
+                </ul>
+            </div><!--Col Footer 1-->        
+            <div class="colfooter">
+               
+               <h3 class="titleFooter"> Contato</h3>
+               <p><i class="icon icon-mail"></i> FungeekStore@.com.br</p>
+
+            </div><!--Col Footer 2-->
+            <div class="colfooter">
+               
+               <h3 class="titleFooter"> Redes Sociais</h3>
+                
+               <a href="#" class="botao"><span> <i class="icon icon-facebook"></i> </span></a>            
+               <a href="#" class="botao"><span> <i class="icon icon-instagram"></i> </span></a>            
+               <a href="#" class="botao"><span> <i class="icon icon-twitter"></i> </span></a>            
+               <a href="#" class="botao"><span> <i class="icon icon-pinterest"></i> </span></a>            
+            </div><!--Col Footer 3-->
+            <div class="clear"></div>
+        
+        </div><!--Contant-->
+        <div class="main_footer_copy">
+            
+            <p class="m-b-footer"> Fungeek Store - 2023, todos os direitos reservados.</p> 
+            <p class="by"><i class="icon icon-heart-3"></i> Desenvolvido por: <a href="#" title="Seu nome">Leandro , Thayris , Joao Felipe</a></p>
+        
+        </div>
+    </footer>
+
+    <script>
+        //alterado, if e else
+        document.addEventListener("DOMContentLoaded", function() {
+            var footerMessage = document.querySelector('.footer-message');
+            var currentDate = new Date();
+            var currentHour = currentDate.getHours();
+    
+            if (currentHour >= 6 && currentHour < 12) {
+                // Manhã
+                footerMessage.textContent = "Bom dia! Obrigada por visitar nosso site!";
+            } else if (currentHour >= 12 && currentHour < 18) {
+                // Tarde
+                footerMessage.textContent = "Boa tarde! Obrigada por visitar nosso site!";
+            } else {
+                // Noite
+                footerMessage.textContent = "Boa noite! Obrigada por visitar nosso site!";
+            }
+        });
+    </script>
+
+</body>
+</html>
